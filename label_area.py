@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 
 import os
 import json
@@ -13,7 +10,6 @@ path = r'C:\Users\Jisoo\Desktop\label_area'# 작업경로
 path2 = r'C:\Users\Jisoo\Desktop\label_area_error' # 에러폴더 보관 경로
 global area_list
 area_list = {}
-
                 
 def label_area(path, folder, file, jdata):
     json_path = path+'/'+folder+'/'+file
@@ -53,10 +49,10 @@ def label_area(path, folder, file, jdata):
         else:
             pass
 
-cnt=0
+cnt = 0
 for folder in os.listdir(path):
-    cnt+=1
-    if cnt%1000 ==0:
+    cnt += 1
+    if cnt%1000 == 0:
         print(cnt)
     for file in os.listdir(path+'/'+folder):
         if file.endswith('Json'):
@@ -72,10 +68,10 @@ for folder in os.listdir(path):
                 area_list[folder] = ['',999999999999]
                 label_area(path, folder, file, jdata)
                 
-cnt=0
+cnt = 0
 for folder in os.listdir(path):
-    cnt+=1
-    if cnt%1000==0:
+    cnt += 1
+    if cnt%1000 == 0:
         print(cnt)
     f_list = [i for i in os.listdir(path+'/'+folder) if i.endswith('Json')]
     for file in os.listdir(path+'/'+folder):
@@ -126,7 +122,7 @@ for folder in os.listdir(path):
                     new_jdata['Bounding'][k]['Color'] = jdata['Bounding'][k]['Color']
                     new_jdata['Bounding'][k]['DETAILS'] = jdata['Bounding'][k]['DETAILS']
                     new_jdata['Bounding'][k]['Shape'] = jdata['Bounding'][k]['Shape']
-                    if jdata['PROJECT SORTING'] == '산업폐기물':
+                    if jdata['PROJECT SORTING'] == 'CLASS_01':
                         new_jdata['Bounding'][k]['Material'] = jdata['Bounding'][k]['Material']
                     else:
                         new_jdata['Bounding'][k]['Texture'] = jdata['Bounding'][k]['Texture']
