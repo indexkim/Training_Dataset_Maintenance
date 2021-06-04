@@ -120,7 +120,7 @@ for folder in os.listdir(path):
                     new_jdata['Bounding'][k]['Color'] = jdata['Bounding'][k]['Color']
                     new_jdata['Bounding'][k]['DETAILS'] = jdata['Bounding'][k]['DETAILS']
                     new_jdata['Bounding'][k]['Shape'] = jdata['Bounding'][k]['Shape']
-                    if jdata['PROJECT SORTING'] == 'CLASS01' :
+                    if jdata['PROJECT SORTING'] == 'ProjectSorting01' :
                         new_jdata['Bounding'][k]['Material'] = jdata['Bounding'][k]['Material']
                     else:
                         new_jdata['Bounding'][k]['Texture'] = jdata['Bounding'][k]['Texture']
